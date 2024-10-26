@@ -22,6 +22,10 @@ func TestGenerateSum(t *testing.T) {
 			target: 400,
 			length: 50,
 		},
+		"Negative Target": {
+			target: -4,
+			length: 3,
+		},
 	}
 
 	for msg, tc := range tests {

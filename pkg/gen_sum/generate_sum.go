@@ -2,6 +2,7 @@ package gen_sum
 
 import (
 	"errors"
+	"math"
 	"math/rand"
 )
 
@@ -15,7 +16,7 @@ func GenerateSum(target int, length int) ([]int, error) {
 	seq := make([]int, 0, length)
 
 	for i := 0; i < length-1; i++ {
-		next_num := rand.Intn(target / 2)
+		next_num := draw_number(target / 2)
 		target -= next_num
 		seq = append(seq, next_num)
 	}
@@ -23,4 +24,14 @@ func GenerateSum(target int, length int) ([]int, error) {
 	seq = append(seq, target)
 
 	return seq, nil
+}
+
+func draw_number(target int) int {
+	value := rand.Intn(int(math.Abs(float64(target))))
+
+	if target < 0 {
+		value *= -1
+	}
+
+	return value
 }
