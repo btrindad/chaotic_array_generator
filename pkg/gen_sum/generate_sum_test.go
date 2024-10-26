@@ -1,6 +1,7 @@
 package gen_sum
 
 import (
+	"csci_6212/project3/test_cases/internal/util"
 	"testing"
 )
 
@@ -37,20 +38,11 @@ func TestGenerateSum(t *testing.T) {
 				t.Errorf("Did not generate a sequence of the correct length. Expected: %d, Got: %d", tc.length, len(seq))
 			}
 
-			seq_sum := sum_array(seq)
+			seq_sum := util.SumArray(seq)
 
 			if seq_sum != tc.target {
 				t.Errorf("Array sum is incorrect. Expected: %d, Got: %d with array %v", tc.target, seq_sum, seq)
 			}
 		})
 	}
-}
-
-func sum_array(seq []int) int {
-	sum := 0
-	for _, num := range seq {
-		sum += num
-	}
-
-	return sum
 }
