@@ -26,7 +26,7 @@ func GenerateArray(target int, length int, min_value int) ([]int, error) {
 // Divides a total length into two sub-lengths to generate
 func split_length(length int) (int, int) {
 	max_partition := int(math.Floor(float64(length) * 0.70))
-	left := rand.Intn(max_partition)
+	left := rand.Intn(max_partition) + 1
 	right := length - left
 
 	return left, right
@@ -65,7 +65,7 @@ func join_arrays(left []int, right []int) []int {
 }
 
 func check_args(target int, length int, min_value int) error {
-	if length <= 0 {
+	if !(length > 2) {
 		msg := fmt.Sprintf("Invalid array length: %d", length)
 		return errors.New(msg)
 	}
