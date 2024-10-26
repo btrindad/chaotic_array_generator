@@ -1,4 +1,5 @@
-.PHONY clean all
+.PHONY: clean all
+
 clean:
 	@rm --force bin/* *.json 2>&1 ; echo 'done'
 
