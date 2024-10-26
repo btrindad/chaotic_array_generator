@@ -1,6 +1,8 @@
 package gen_sum
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestGenerateSum(t *testing.T) {
 	tests := map[string]struct {
@@ -11,11 +13,22 @@ func TestGenerateSum(t *testing.T) {
 			target: 15,
 			length: 4,
 		},
+		"Longer Target": {
+			target: 15,
+			length: 20,
+		},
+		"Large Target": {
+			target: 400,
+			length: 50,
+		},
 	}
 
 	for msg, tc := range tests {
 		t.Run(msg, func(t *testing.T) {
 			seq, err := GenerateSum(tc.target, tc.length)
+
+			t.Logf("TestCase %s: Sequence %v", msg, seq)
+
 			if err != nil {
 				t.Errorf("Encountered an unexpected error generating target %d", tc.target)
 			}
