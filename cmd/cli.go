@@ -96,7 +96,7 @@ func get_trial(length int) (Trial, error) {
 // arrays with negative numbers
 func rand_min() int {
 	roll := rand.Intn(10)
-	if roll <= 3 {
+	if roll <= 2 {
 		// Only return a negative number ~30% of the time
 		return (rand.Intn(25) * -1)
 	} else {
