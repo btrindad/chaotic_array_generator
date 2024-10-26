@@ -61,6 +61,10 @@ Will create a `output.json` file with 15 lines. The first 5 lines will be a arra
 
 Maybe one day I'll fix this up. Somethings that might be fun to include are:
 
-1. Subcommands
+#### Subcommands
 
-- It might be useful to be able to create one off arrays with particular values
+It might be useful to be able to create one off arrays with particular values
+
+#### Concurrency
+
+Right now this is just single threaded. It'd be really cool to parallelize it
