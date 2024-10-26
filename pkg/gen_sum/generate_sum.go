@@ -27,6 +27,10 @@ func GenerateSum(target int, length int) ([]int, error) {
 }
 
 func draw_number(target int) int {
+	if target == 0 {
+		return 0
+	}
+
 	value := rand.Intn(int(math.Abs(float64(target))))
 
 	if target < 0 {
