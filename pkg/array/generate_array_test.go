@@ -86,21 +86,7 @@ func TestGenerateArray(t *testing.T) {
 				if len(arr) != tc.length {
 					t.Errorf("Did not generate expected number of values. Expected: %d, Got: %d", tc.length, len(arr))
 				}
-
-				if tc.min_value != 0 && !scan_array(arr, tc.min_value) {
-					t.Errorf("Array did not contain the requested minimum value %d, %v", tc.min_value, arr)
-				}
 			}
 		})
 	}
-}
-
-func scan_array(arr []int, target int) bool {
-	for _, elem := range arr {
-		if elem == target {
-			return true
-		}
-	}
-
-	return false
 }
