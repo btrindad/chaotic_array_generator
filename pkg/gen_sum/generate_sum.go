@@ -16,7 +16,7 @@ func GenerateSum(target int, length int) ([]int, error) {
 	seq := make([]int, 0, length)
 
 	for i := 0; i < length-1; i++ {
-		next_num := draw_number(target / 2)
+		next_num := draw_number(target / length)
 		target -= next_num
 		seq = append(seq, next_num)
 	}

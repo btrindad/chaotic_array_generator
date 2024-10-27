@@ -55,6 +55,7 @@ func GenerateData(output_file string, trials int, exponent int) error {
 type Trial struct {
 	Sum   int
 	Array []int
+	Count int
 }
 
 // A helper function to make an array of a certain length
@@ -69,6 +70,7 @@ func get_trial(length int) (Trial, error) {
 	round := Trial{
 		Sum:   sum,
 		Array: arr,
+		Count: length,
 	}
 
 	return round, nil
